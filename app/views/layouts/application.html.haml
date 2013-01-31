@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %title BlogOwn
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+
+  %body
+    = render partial: 'layouts/header'
+
+    .container
+      .content
+        .page-header
+          %h1= yield :page_title
+
+        .row
+          .span9
+            = yield
+
+          .span3.sidebar
+            = render partial: 'layouts/sidebar'
+
+      = render partial: 'layouts/footer'
